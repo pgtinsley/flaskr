@@ -7,10 +7,14 @@ import Col from 'react-bootstrap/Col'
 
 // import PersonList from './Components/PersonList.js'
 import ClusterNInfo from './Components/ClusterNInfo.js' 
+<<<<<<< HEAD
 import ClusterUInfo from './Components/ClusterUInfo.js'
 import ChipsN from './Components/ChipsN.js' 
 import ChipsU from './Components/ChipsU.js' 
 
+=======
+import ClusterUInfo from './Components/ClusterUInfo.js' 
+>>>>>>> 57eee6f4e1d6b63fac4dd4d57e6bb71c6fd04255
 import RefreshButton from './Components/RefreshButton.js'
 
 function App() {
@@ -28,6 +32,7 @@ function App() {
                         <ClusterUInfo />
                     </Col>
                 </Row>
+<<<<<<< HEAD
                 <hr />
                 <Row>
                     <Col>
@@ -41,6 +46,11 @@ function App() {
                 <RefreshButton /> 
             </Container>
         </div>
+=======
+           <RefreshButton /> 
+	    </Container>
+	    </div>
+>>>>>>> 57eee6f4e1d6b63fac4dd4d57e6bb71c6fd04255
     );
 }
 
