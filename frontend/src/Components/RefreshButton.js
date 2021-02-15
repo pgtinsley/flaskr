@@ -1,32 +1,20 @@
 import React from 'react';
 import { Button } from 'react-bootstrap';
 
-<<<<<<< HEAD
-=======
-import axios from 'axios';
-
->>>>>>> 57eee6f4e1d6b63fac4dd4d57e6bb71c6fd04255
 function refreshButton(){
   
- function refreshPage() {
-    window.location.reload(false);
-  }
+    function refreshPage() {
+        window.location.reload(false);
+    }
   
-  return (
+    return (
     <div>
-<<<<<<< HEAD
-      <hr />
-      <Button onClick={refreshPage}>Refresh</Button>
+        <Button onClick={refreshPage}>Refresh</Button>
     </div>
   );
 }
+
 export default refreshButton;
-=======
-      <button onClick={refreshPage}>Refresh</button>
-    </div>
-  );
-}
-export default refreshButton; 
 	/*
   handleClick() {
     axios.get('/ClusterN')
@@ -42,4 +30,4 @@ export default refreshButton;
       )
 }
 }*/
->>>>>>> 57eee6f4e1d6b63fac4dd4d57e6bb71c6fd04255
+

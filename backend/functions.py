@@ -37,7 +37,7 @@ def clusterN(n):
     for i, x in enumerate(df['cluster'].value_counts()):
         breakdown.append({ 'id':i,'count':x })
     
-    return {'num_detections': len(df), 'num_clusters': len(df['cluster'].unique()), 'breakdown': breakdown } 
+    return {'num_detections': len(df['frame'].unique()), 'total_detections': len(df), 'num_clusters': len(df['cluster'].unique()), 'breakdown': breakdown } 
 
 def clusterUnknown():
     
@@ -67,7 +67,7 @@ def clusterUnknown():
     for i, x in enumerate(df['cluster'].value_counts()):
         breakdown.append({ 'id':i,'count':x })
     
-    return {'num_detections': len(df), 'num_clusters': len(df['cluster'].unique()), 'breakdown': breakdown }
+    return {'num_detections': len(df['frame'].unique()), 'total_detections':len(df), 'num_clusters': len(df['cluster'].unique()), 'breakdown': breakdown }
        
 def getChips(known):
 

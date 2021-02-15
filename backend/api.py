@@ -25,7 +25,7 @@ def f1(n):
     info = clusterN(n)
     return jsonify(info)
 
-@app.route('/clusterUnknown')
+@app.route('/clusterU')
 def f2():
     info = clusterUnknown()
     return jsonify(info)
