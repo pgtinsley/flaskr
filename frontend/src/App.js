@@ -8,6 +8,7 @@ import Col from 'react-bootstrap/Col'
 // import PersonList from './Components/PersonList.js'
 import ClusterNInfo from './Components/ClusterNInfo.js' 
 import ClusterUInfo from './Components/ClusterUInfo.js' 
+import RefreshButton from './Components/RefreshButton.js'
 
 function App() {
     
@@ -24,8 +25,9 @@ function App() {
                         <ClusterUInfo />
                     </Col>
                 </Row>
-            </Container>
-        </div>
+           <RefreshButton /> 
+	    </Container>
+	    </div>
     );
 }
 
