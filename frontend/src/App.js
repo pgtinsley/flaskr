@@ -7,7 +7,11 @@ import Col from 'react-bootstrap/Col'
 
 // import PersonList from './Components/PersonList.js'
 import ClusterNInfo from './Components/ClusterNInfo.js' 
-import ClusterUInfo from './Components/ClusterUInfo.js' 
+import ClusterUInfo from './Components/ClusterUInfo.js'
+import ChipsN from './Components/ChipsN.js' 
+import ChipsU from './Components/ChipsU.js' 
+
+import RefreshButton from './Components/RefreshButton.js'
 
 function App() {
     
@@ -24,6 +28,17 @@ function App() {
                         <ClusterUInfo />
                     </Col>
                 </Row>
+                <hr />
+                <Row>
+                    <Col>
+                        <ChipsN />
+                    </Col>
+                    <Col>
+                        <ChipsU />
+                    </Col>
+
+                </Row>
+                <RefreshButton /> 
             </Container>
         </div>
     );

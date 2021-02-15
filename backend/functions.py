@@ -1,7 +1,9 @@
 import os
 import glob
+import time
 
 import pickle
+import numpy as np
 import pandas as pd
 
 from sklearn.cluster import MiniBatchKMeans, DBSCAN
@@ -26,7 +28,7 @@ def clusterN(n):
     df['cluster'] = model.labels_
 
     ### WRITE OUT DATA
-    with open('./df_to_display.pkl', 'wb') as f:
+    with open('../data/df_to_display_known.pkl', 'wb') as f:
         pickle.dump(df, f)
 
     print('Done.')
@@ -56,7 +58,7 @@ def clusterUnknown():
     df['cluster'] = model.labels_
 
     ### WRITE OUT DATA
-    with open('../data/df_to_display.pkl', 'wb') as f:
+    with open('../data/df_to_display_unknown.pkl', 'wb') as f:
         pickle.dump(df, f)
 
     print('Done.')
@@ -66,9 +68,27 @@ def clusterUnknown():
         breakdown.append({ 'id':i,'count':x })
     
     return {'num_detections': len(df), 'num_clusters': len(df['cluster'].unique()), 'breakdown': breakdown }
-    
-    
-# def thumbnail():
-    
-    
+       
+def getChips(known):
+
+    if known==True:
+
+        with open('../data/df_to_display_known.pkl', 'rb') as f:
+            df = pickle.load(f)
+    else:
+        with open('../data/df_to_display_unknown.pkl', 'rb') as f:
+            df = pickle.load(f)
+
+    frame_nums = [str(v) for v in df['frame'].values]
+    chips = list(df['chip'].values)
+    cluster_labels = [str(x) for x in df['cluster'].values]
+
+    id = 0
+    tr = []
+    for f, c, l in zip(frame_nums, chips, cluster_labels):
+        tr.append({'id': id, 'frame_num': f, 'chip':c, 'cluster': l})
+        id+=1 
+            
+    return {'data':tr}
+
     
