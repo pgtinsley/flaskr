@@ -20,6 +20,7 @@ function App() {
             <Container className="text-center">
                 <h1>Facial Recognition Dashboard</h1>
                 <p>{ new Date().toLocaleTimeString() }</p>
+                <RefreshButton /> 
                 <Row>
                     <Col>
                         <ClusterNInfo />
@@ -38,7 +39,6 @@ function App() {
                     </Col>
                 </Row>
                 <hr />
-                <RefreshButton /> 
             </Container>
         </div>
     );

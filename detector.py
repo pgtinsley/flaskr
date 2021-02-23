@@ -23,6 +23,7 @@ def py_clip(x,l,u): return (l if x < l else u if x > u else x)
 netname = 'facenet-120'
 conf_thresh = 0.5
 uri = 'file:///home/blumb/tel.mkv'
+#uri = 'file:///home/ptinsley/wanda.mp4'
 port = 9776
 
 # parse options

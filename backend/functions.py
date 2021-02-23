@@ -85,7 +85,8 @@ def getChips(known):
 
     id = 0
     tr = []
-    for f, c, l in zip(frame_nums, chips, cluster_labels):
+#     for f, c, l in zip(frame_nums, chips, cluster_labels):
+    for f, c, l in zip(frame_nums[0:5], chips[0:5], cluster_labels[0:5]):
         tr.append({'id': id, 'frame_num': f, 'chip':c, 'cluster': l})
         id+=1 
             
