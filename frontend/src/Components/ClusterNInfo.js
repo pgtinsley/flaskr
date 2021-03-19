@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 
 import axios from 'axios';
 
@@ -13,7 +13,9 @@ export default class ClusterNInfo extends React.Component {
   }
 
   componentDidMount() {
-    axios.get('/clusterN')
+   if (this.props.clusterN) {
+    const cluster = '/clusterN/' + this.props.clusterN
+    axios.get(cluster)
       .then(res => {;
         console.log(res.data);
         this.setState({ breakdown: res.data.breakdown });
@@ -21,11 +23,24 @@ export default class ClusterNInfo extends React.Component {
         this.setState({ num_detections: res.data.num_detections });
         this.setState({ total_detections: res.data.total_detections });
       })
+   }
+  else {
+  const cluster = '/clusterN'
+    axios.get(cluster)
+      .then(res => {;
+        console.log(res.data);
+        this.setState({ breakdown: res.data.breakdown });
+        this.setState({ num_clusters: res.data.num_clusters });
+        this.setState({ num_detections: res.data.num_detections });
+        this.setState({ total_detections: res.data.total_detections });
+      })
+   }
+
   }
 
   render() {
     return (
-        <div>
+      <div> 
             <h4>Known Number of Clusters</h4>
             <p>Frames Processed: {this.state.num_detections} </p>
             <p>Total Detections: {this.state.total_detections} </p>

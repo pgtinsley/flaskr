@@ -12,7 +12,7 @@ import ChipsN from './Components/ChipsN.js'
 import ChipsU from './Components/ChipsU.js' 
 
 import RefreshButton from './Components/RefreshButton.js'
-
+import RefreshField from './Components/refreshKnownCluster.js'
 function App() {
     
     return (
@@ -20,11 +20,10 @@ function App() {
             <Container className="text-center">
                 <h1>Facial Recognition Dashboard</h1>
                 <p>{ new Date().toLocaleTimeString() }</p>
-                <RefreshButton /> 
                 <Row>
                     <Col>
-                        <ClusterNInfo />
-                    </Col>
+                <RefreshField/>     
+	    	</Col>
                     <Col>
                         <ClusterUInfo />
                     </Col>
@@ -40,7 +39,8 @@ function App() {
                 </Row>
                 <hr />
             </Container>
-        </div>
+         {setTimeout('window.location.reload();', 30000)}}
+	 </div>
     );
 }
 
