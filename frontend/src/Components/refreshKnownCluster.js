@@ -7,21 +7,20 @@ import ClusterNInfo from './ClusterNInfo.js'
 
 
 function RefreshField(){
-	const valueRef = useRef('') 
+   const valueRef = useRef('') 
    const [, updateState] = React.useState();
-  const forceUpdate = React.useCallback(() => updateState({}), []); 
-    var someVarName = JSON.stringify(valueRef.current.value)
-localStorage.setItem("someVarKey", someVarName);
-    function sendValue(){
-        return valueRef.current.value 
-    }
+   const forceUpdate = React.useCallback(() => updateState({}), []); 
+   function populateStorage(){
+     const someVarName = JSON.stringify(valueRef.current.value)
+     localStorage.setItem("input", someVarName);}
     function RefreshPage() {
       const cur = valueRef.current.value
+      populateStorage()
       return  <ClusterNInfo clusterN = {cur}/>
-   } 
+   }
     return(
 	<div>
-           <TextField required id="standard-required" label="Required" defaultValue= {localStorage.getItem("someVarKey")} inputRef= {valueRef}/>
+           <TextField required id="standard-required" label="Required" defaultValue= {(localStorage.getItem("input")).replace(/['"]+/g, '')} inputRef= {valueRef}/>
            <Button onClick={forceUpdate}>Refresh</Button>
 	   <RefreshPage /> 
    	</div>
