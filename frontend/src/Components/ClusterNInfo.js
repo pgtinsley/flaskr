@@ -13,6 +13,11 @@ export default class ClusterNInfo extends React.Component {
   }
 
   componentDidMount() {
+   this.getData(); 
+   setInterval(this.getData, 10000);
+   } 
+
+   getData = () => {
    if (this.props.clusterN) {
     const cluster = '/clusterN/' + this.props.clusterN
     axios.get(cluster)

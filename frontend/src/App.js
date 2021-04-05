@@ -39,7 +39,6 @@ function App() {
                 </Row>
                 <hr />
             </Container>
-         {setTimeout('window.location.reload();', 30000)}}
 	 </div>
     );
 }

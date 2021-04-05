@@ -13,7 +13,11 @@ export default class ClusterUInfo extends React.Component {
   }
 
   componentDidMount() {
-    axios.get('/clusterU')
+    this.getData(); 
+    setInterval(this.getData, 10000);
+  }
+  getData = () => {
+   axios.get('/clusterU')
       .then(res => {;
         console.log(res.data);
         this.setState({ breakdown: res.data.breakdown });
