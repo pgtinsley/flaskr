@@ -20,7 +20,7 @@ function RefreshField(){
    }
     return(
 	<div>
-           <TextField required id="standard-required" label="Required" defaultValue= {(localStorage.getItem("input")).replace(/['"]+/g, '')} inputRef= {valueRef}/>
+           <TextField required id="standard-required" label="Required" defaultValue= {2} inputRef= {valueRef}/>
            <Button onClick={forceUpdate}>Refresh</Button>
 	   <RefreshPage /> 
    	</div>

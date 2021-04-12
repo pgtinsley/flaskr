@@ -30,7 +30,7 @@ export default class ClusterNInfo extends React.Component {
       })
    }
   else {
-  const cluster = '/clusterN'
+  const cluster = '/clusterN/2'
     axios.get(cluster)
       .then(res => {;
         console.log(res.data);
